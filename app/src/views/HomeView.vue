@@ -1,9 +1,14 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+<script>
+import FireData from '@/components/ChartThing.vue'
+
+export default {
+  name: 'App',
+  components: { FireData },
+}
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <FireData />
   </main>
 </template>
