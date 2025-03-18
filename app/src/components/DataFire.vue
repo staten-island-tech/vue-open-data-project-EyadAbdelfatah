@@ -12,12 +12,7 @@
 </template>
 
 <script setup>
-}
-fireData()
-console.log(1)
-console.log(result)
-
-</script>
+import { ref, onMounted } from 'vue';
 
 const items = ref([]);
 
