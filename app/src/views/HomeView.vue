@@ -1,15 +1,13 @@
-<script>
-// import ChartThing from '@/components/ChartThing.vue'
+<script setup>
 
-// export default {
-//   name: 'App',
-//   components: { ChartThing },
-// }
+
 import DataFire from '@/components/DataFire.vue';
 </script>
 
 <template>
   <main>
+    <h1>yo</h1>
     <DataFire/>
+    
   </main>
 </template>
