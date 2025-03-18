@@ -1,9 +1,8 @@
 <script>
-
 import { RouterLink, RouterView } from 'vue-router'
-import ItemDetail from './views/ItemDetail.vue';
+import ItemDetail from './views/ItemDetail.vue'
 
-
+import BarChart from './components/BarChart.vue'
 </script>
 
 <template>
@@ -11,12 +10,9 @@ import ItemDetail from './views/ItemDetail.vue';
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-
-        <ItemDetail/>
-      <nav>
-        
-
-      </nav>
+      <ItemDetail />
+      <BarChart />
+      <nav></nav>
     </div>
   </header>
 

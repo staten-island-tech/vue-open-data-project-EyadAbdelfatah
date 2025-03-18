@@ -1,4 +1,3 @@
-
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ItemDetail from '../views/ItemDetail.vue'
@@ -10,7 +9,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: '/item/:id', 
+    path: '/item/:id',
     component: ItemDetail,
     name: 'ItemDetail',
   },
@@ -20,7 +19,5 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
-
-
 
 export default router
