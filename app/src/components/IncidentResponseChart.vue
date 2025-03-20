@@ -1,14 +1,13 @@
 <template>
   <div>
     <BarChart :chartData="chartData" :options="chartOptions" />
-    <h1>he</h1>
   </div>
 </template>
 
 <script setup>
 import { reactive, onMounted } from 'vue'
 import { Bar } from 'vue-chartjs'
-
+import BarChart from './BarChart.vue'
 import {
   Chart as ChartJS,
   Title,
@@ -22,12 +21,11 @@ import {
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const props = defineProps({
-  apiData: {
-    type: Array,
-    required: true,
-  },
-})
+  apiData: Array,
 
+  aval: Boolean,
+})
+console.log(props.apiData)
 const chartData = reactive({
   labels: [],
   datasets: [
@@ -51,11 +49,11 @@ const chartOptions = reactive({
 
 const processData = () => {
   const boroughs = {}
-
+  console.log(props.apiData.value)
   props.apiData.forEach((incident) => {
     const borough = incident.incident_borough
     const responseTime = parseInt(incident.incident_response_seconds_qy)
-    console.log('wdfuio')
+
     if (!boroughs[borough]) {
       boroughs[borough] = { totalResponseTime: 0, count: 0 }
     }
@@ -76,11 +74,10 @@ const processData = () => {
 
   chartData.labels = labels
   chartData.datasets[0].data = data
+  console.log(Math.round(data))
 }
 
-onMounted(() => {
-  processData()
-})
+processData()
 </script>
 
 <style scoped></style>

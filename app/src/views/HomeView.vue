@@ -6,7 +6,7 @@ import IncidentResponseChart from '@/components/IncidentResponseChart.vue'
 <template>
   <main>
     <h1>yo</h1>
-    <!-- <DataFire/> -->
+    <DataFire />
     <IncidentResponseChart />
   </main>
 </template>
