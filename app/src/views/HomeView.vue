@@ -1,12 +1,14 @@
 <script setup>
-import DataFire from '@/components/DataFire.vue'
-import IncidentResponseChart from '@/components/IncidentResponseChart.vue'
+
+import ChartMenu from '@/components/ChartMenu.vue';
+import DataFire from '@/components/IncidentChart.vue'
+
 </script>
 
 <template>
   <main>
-    <h1>yo</h1>
-    <DataFire />
-    <IncidentResponseChart />
+    <!-- <BarChart/> -->
+     <div class="justify-center"><ChartMenu/></div>
+    
   </main>
 </template>

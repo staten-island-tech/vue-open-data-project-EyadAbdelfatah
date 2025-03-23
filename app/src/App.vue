@@ -1,21 +1,11 @@
-<script>
-import { RouterLink, RouterView } from 'vue-router'
-import ItemDetail from './views/ItemDetail.vue'
+<script setup>
+import { RouterView } from 'vue-router'
 
-import BarChart from './components/BarChart.vue'
-import IncidentResponseChart from './components/IncidentResponseChart.vue'
+import DataFire from './components/IncidentChart.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <!-- <ItemDetail /> -->
-      <IncidentResponseChart />
-      <nav></nav>
-    </div>
-  </header>
+ 
 
   <RouterView />
 </template>

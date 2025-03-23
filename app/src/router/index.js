@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ItemDetail from '../views/ItemDetail.vue'
+import DataFire from '@/components/IncidentChart.vue'
+import { name } from '@vue/eslint-config-prettier/skip-formatting'
+import DataGet from '@/components/DataGet.vue'
 
 const routes = [
   {
@@ -8,11 +11,8 @@ const routes = [
     name: 'home',
     component: HomeView,
   },
-  {
-    path: '/item/:id',
-    component: ItemDetail,
-    name: 'ItemDetail',
-  },
+  { path: '/datafire', component: DataGet }
+
 ]
 
 const router = createRouter({
