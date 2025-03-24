@@ -4,7 +4,6 @@ import ItemDetail from '../views/ItemDetail.vue'
 import DataFire from '@/components/IncidentChart.vue'
 import { name } from '@vue/eslint-config-prettier/skip-formatting'
 import DataGet from '@/components/DataGet.vue'
-
 import TryData from '@/components/TryData.vue'
 
 const routes = [
