@@ -1,53 +1,44 @@
 <template>
     <div class="flex flex-col items-center">
       <h2 class="text-xl mb-4">Select a Borough</h2>
-      <select v-model="selectedBorough" class="p-2 border mb-4">
+      <select v-model="selectedBorough" class="p-2 border mb-4" @change="preparePieChartData()">
         <option v-for="borough in Object.keys(groupedData)" :key="borough" :value="borough">
           {{ borough }}
         </option>
       </select>
-  
+    
       <h3 class="text-lg mb-4">Incident Classification by Borough</h3>
-      <PieChart :data="pieChartData" v-if="selectedBorough" />
+      <Pie v-if="pieChartData" :data="pieChartData" />
     </div>
   </template>
   
   <script setup>
-  import { ref } from 'vue'
-  import { Pie } from 'vue-chartjs'
-  import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale } from 'chart.js'
-  
-  ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
-  
-  const props = defineProps({
-    incidentData: Array
+import { ref } from 'vue'
+import { Pie } from 'vue-chartjs';  
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';  
+
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+const groupedData = ref({})
+const selectedBorough = ref(null)
+const pieChartData = ref(null)
+  const prop = defineProps({
+    incidents:Array
   })
-  
-  const selectedBorough = ref(null)
-  const groupedData = ref({})
-  const pieChartData = ref({
-    labels: [],
-    datasets: [{
-      data: [],
-      backgroundColor: [],
-      borderColor: [],
-      borderWidth: 1
-    }]
-  })
-  
+  console.log(prop.incidents)
   function processData() {
     const data = {}
   
-    if (props.incidentData !== undefined && props.incidentData.length > 0) {
-      props.incidentData.forEach(item => {
+    if (prop.incidents.length > 0) {
+      prop.incidents.forEach(item => {
         const borough = item.incident_borough
         const category = item.incident_classification_group
   
-        if (data[borough] === undefined) {
+        if (!data[borough]) {
           data[borough] = {}
         }
   
-        if (data[borough][category] === undefined) {
+        if (!data[borough][category]) {
           data[borough][category] = 0
         }
   
@@ -56,21 +47,24 @@
     }
   
     groupedData.value = data
+
   }
-  
+  processData()
+
   function preparePieChartData() {
+    
     if (selectedBorough.value && groupedData.value[selectedBorough.value]) {
       const boroughData = groupedData.value[selectedBorough.value]
       const labels = []
       const data = []
       const backgroundColor = []
-      
+      console.log(7)
       Object.keys(boroughData).forEach(category => {
         labels.push(category)
         data.push(boroughData[category])
         backgroundColor.push(getRandomColor())
       })
-  
+      
       pieChartData.value = {
         labels,
         datasets: [{
@@ -81,6 +75,7 @@
         }]
       }
     }
+
   }
   
   function getRandomColor() {
@@ -91,10 +86,6 @@
     }
     return color
   }
-  
-  if (props.incidentData !== undefined && props.incidentData.length > 0) {
-    processData()
-    preparePieChartData()
-  }
+
   </script>
   

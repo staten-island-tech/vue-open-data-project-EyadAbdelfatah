@@ -5,13 +5,17 @@ import DataFire from '@/components/IncidentChart.vue'
 import { name } from '@vue/eslint-config-prettier/skip-formatting'
 import DataGet from '@/components/DataGet.vue'
 
+import TryData from '@/components/TryData.vue'
+
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView,
   },
-  { path: '/datafire', component: DataGet }
+  { path: '/datafire', component: DataGet },
+
+  {path: '/trypie', component:TryData}
 
 ]
 

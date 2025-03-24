@@ -4,7 +4,9 @@
       <ul class="flex space-x-4">
 
         <li><router-link to="/datafire" class="hover:underline">Incident Response Bar Chart</router-link></li>
-      </ul>
+        <li><router-link to="/trypie" class="hover:underline"> 2\Incident pie chart and stuffs and thigns</router-link></li>
+    
+    </ul>
     </nav>
   </template>
 
