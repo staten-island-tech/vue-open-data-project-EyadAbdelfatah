@@ -1,11 +1,12 @@
 <template>
-  <div class="align-center flex w-full">
-    <h2 class="w-full">Chart Display</h2>
-    <ul class="flex space-x-4">
-      <li><router-link to="/" class="hover:underline">Home</router-link></li>
+  
+    <ul >
+      <h2 class="justify-center flex max-w-screen max-h-150 items-center ">Chart Display</h2>
+      <li class="justify-center flex max-w-screen max-h-150 items-center "><router-link to="/" class="hover:underline">Home</router-link></li>
+      <Bar :data="chartData" />
     </ul>
-    <Bar :data="chartData" />
-  </div>
+    
+
 </template>
 
 <script setup>

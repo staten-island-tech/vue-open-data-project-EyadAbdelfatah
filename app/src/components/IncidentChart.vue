@@ -1,7 +1,7 @@
 <template>
   <br>
-  <div class="align-center flex w-full">
-    <h2 class="w-full ">Chart Display</h2>
+  <div class="align-center flex max-h-128">
+    <h2 class=" ">Chart Display</h2>
     <ul class="flex space-x-4">
         <li><router-link to="/" class="hover:underline">Home</router-link></li>
     </ul>

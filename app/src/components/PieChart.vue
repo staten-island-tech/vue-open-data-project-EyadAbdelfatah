@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center max-h-140">
       <h2 class="text-xl mb-4">Select a Borough</h2>
       <select v-model="selectedBorough" class="p-2 border mb-4" @change="preparePieChartData()">
         <option v-for="borough in Object.keys(groupedData)" :key="borough" :value="borough">
@@ -8,6 +8,9 @@
       </select>
     
       <h3 class="text-lg mb-4">Incident Classification by Borough</h3>
+      <ul class="flex space-x-4">
+        <li><router-link to="/" class="hover:underline">Home</router-link></li>
+    </ul>
       <Pie v-if="pieChartData" :data="pieChartData" />
     </div>
   </template>
