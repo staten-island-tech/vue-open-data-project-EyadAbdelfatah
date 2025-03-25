@@ -37,6 +37,14 @@ const pieChartData = ref(null)
         const borough = item.incident_borough
         const category = item.incident_classification_group
   
+        if (!data[borough]) {
+          data[borough] = {}
+        }
+  
+        if (!data[borough][category]) {
+          data[borough][category] = 0
+        }
+  
         data[borough][category] += 1
       })
     }

@@ -12,7 +12,8 @@
     <div class="grid grid-cols-5 gap-4 justify-center m-16">
     <div v-if="incidents.length > 0" v-for="incident in incidents" class="p-4 border rounded shadow">
         <h3>{{ incident.alarm_box_location }}</h3>
-    </div>
+        <h3>{{ incident.alarm_box_borough }}</h3>
+        <h3>{{ incident.alarm_box_number }}</h3>    </div>
 </div>
     
   </template>
