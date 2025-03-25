@@ -72,3 +72,7 @@ function filterData() {
   }
 }
 </script>
+
+<style  scoped>
+
+</style>

@@ -8,7 +8,7 @@
         <li><router-link to="/trypie" class="hover:underlinejustify-center flex max-w-screen max-h-150 items-center "> Incident pie chart and stuffs and thigns</router-link></li>
     </ul>
     </nav>
-    <h2>Wow so data load</h2>
+    <h2 class="justify-center flex">Wow so data load</h2>
     <div class="grid grid-cols-5 gap-4 justify-center m-16">
     <div v-if="incidents.length > 0" v-for="incident in incidents" class="p-4 border rounded shadow">
         <h3>{{ incident.alarm_box_location }}</h3>

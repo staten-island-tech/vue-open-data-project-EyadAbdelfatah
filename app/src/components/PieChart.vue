@@ -92,3 +92,6 @@ const pieChartData = ref(null)
 
   </script>
   
+  <style  scoped>
+
+</style>
