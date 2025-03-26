@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { name } from '@vue/eslint-config-prettier/skip-formatting'
 import DataGet from '@/components/DataGet.vue'
-import TryData from '@/components/TryData.vue'
+import TryData from '@/components/FireData.vue'
 
 const routes = [
   {

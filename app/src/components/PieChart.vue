@@ -46,11 +46,12 @@ const pieChartData = ref(null)
         }
   
         data[borough][category] += 1
+        console.log(data)
       })
     }
   
     groupedData.value = data
-
+    console.log(data)
   }
   processData()
 
